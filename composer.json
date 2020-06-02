@@ -19,7 +19,6 @@
 		"php": "^5.6 || ^7",
 		"brain/monkey": "^2.0",
 		"mikey179/vfsstream": "^1.6",
-		"woocommerce/woocommerce": "^3.8",
 		"wp-media/phpunit": "^1.0",
 		"wpackagist-plugin/hummingbird-performance":"2.0.1",
 		"wpackagist-plugin/simple-custom-css": "^4.0.3",

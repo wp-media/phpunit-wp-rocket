@@ -33,7 +33,7 @@ function load_original_fixtures_before_mocking() {
 		'/WPDieException.php',
 	];
 	foreach ( $fixtures as $file ) {
-		require_once PHPUNIT_WP_ROCKET_ROOT_DIR . $file;
+		require_once PHPUNIT_WP_ROCKET_FIXTURES_DIR . $file;
 	}
 }
 

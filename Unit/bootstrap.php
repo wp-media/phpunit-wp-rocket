@@ -2,10 +2,21 @@
 
 namespace WP_Rocket\Tests\Unit;
 
-define( 'WP_ROCKET_PLUGIN_ROOT', dirname( dirname( __DIR__ ) ) . DIRECTORY_SEPARATOR );
-define( 'WP_ROCKET_TESTS_FIXTURES_DIR', dirname( __DIR__ ) . '/Fixtures' );
-define( 'WP_ROCKET_TESTS_DIR', __DIR__ );
-define( 'WP_ROCKET_IS_TESTING', true );
+/**
+ * These constants should be defined in the WP Rocket's bootstrap file:
+ *
+ * - WP_ROCKET_PLUGIN_ROOT
+ * - WP_ROCKET_TESTS_FIXTURES_DIR
+ */
+
+define( 'PHPUNIT_WP_ROCKET_FIXTURES_DIR', dirname( __DIR__ ) . '/Fixtures' );
+
+if ( ! defined( 'WP_ROCKET_IS_TESTING' ) ) {
+	define( 'WP_ROCKET_IS_TESTING', true );
+}
+
+define( 'PHPUNIT_WP_ROCKET_ROOT_DIR', dirname( dirname( dirname( __DIR__ ) ) ) );
+define( 'PHPUNIT_WP_ROCKET_TESTS_DIR', __DIR__ );
 
 // Set the path and URL to our virtual filesystem.
 define( 'WP_ROCKET_CACHE_ROOT_PATH', 'vfs://public/wp-content/cache/' );
@@ -22,7 +33,7 @@ function load_original_fixtures_before_mocking() {
 		'/WPDieException.php',
 	];
 	foreach ( $fixtures as $file ) {
-		require_once WP_ROCKET_TESTS_FIXTURES_DIR . $file;
+		require_once PHPUNIT_WP_ROCKET_ROOT_DIR . $file;
 	}
 }
 

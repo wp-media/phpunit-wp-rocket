@@ -3,7 +3,6 @@
 namespace WP_Rocket\Tests\Fixtures;
 
 use ArrayAccess;
-use WP_Rocket\Engine\Cache\AdvancedCache;
 
 class DIContainer implements ArrayAccess {
 	private $container = [];
@@ -52,13 +51,5 @@ class DIContainer implements ArrayAccess {
 
 	public function offsetUnset( $key ) {
 		return $this->remove( $key );
-	}
-
-	/********************************************************
-	 * Add specific concretes here for reuse in the tests.
-	 *******************************************************/
-
-	public function addAdvancedCache( $template_path, $filesystem = null ) {
-		$this->container['advanced_cache'] = new AdvancedCache( $template_path, $filesystem );
 	}
 }

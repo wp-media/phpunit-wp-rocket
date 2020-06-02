@@ -2,7 +2,6 @@
 
 namespace WP_Rocket\Tests\Integration;
 
-use WC_Install;
 use WPMedia\PHPUnit\BootstrapManager;
 use function Patchwork\redefine;
 

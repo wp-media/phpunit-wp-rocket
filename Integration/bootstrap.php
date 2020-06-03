@@ -18,14 +18,12 @@ if ( ! defined( 'WP_ROCKET_IS_TESTING' ) ) {
 	define( 'WP_ROCKET_IS_TESTING', true );
 }
 
-define( 'PHPUNIT_WP_ROCKET_ROOT_DIR', dirname( dirname( dirname( __DIR__ ) ) ) );
-
 tests_add_filter(
 	'muplugins_loaded',
 	function () {
 		if ( BootstrapManager::isGroup( 'WithSCCSS' ) ) {
 			// Load Simple Custom CSS plugin.
-			require PHPUNIT_WP_ROCKET_ROOT_DIR . '/vendor/wpackagist-plugin/simple-custom-css/simple-custom-css.php';
+			require WPMEDIA_PHPUNIT_ROOT_DIR . '/vendor/wpackagist-plugin/simple-custom-css/simple-custom-css.php';
 			update_option(
 				'sccss_settings',
 				[
@@ -36,12 +34,12 @@ tests_add_filter(
 
 		if ( BootstrapManager::isGroup( 'WithAmp' ) ) {
 			// Load AMP plugin.
-			require PHPUNIT_WP_ROCKET_ROOT_DIR . '/vendor/wpackagist-plugin/amp/amp.php';
+			require WPMEDIA_PHPUNIT_ROOT_DIR . '/vendor/wpackagist-plugin/amp/amp.php';
 		}
 
 		if ( BootstrapManager::isGroup( 'WithAmpAndCloudflare' ) ) {
 			// Load AMP plugin.
-			require PHPUNIT_WP_ROCKET_ROOT_DIR . '/vendor/wpackagist-plugin/amp/amp.php';
+			require WPMEDIA_PHPUNIT_ROOT_DIR . '/vendor/wpackagist-plugin/amp/amp.php';
 			update_option(
 				'wp_rocket_settings',
 				[
@@ -57,14 +55,14 @@ tests_add_filter(
 
 		if ( BootstrapManager::isGroup( 'WithSmush' ) ) {
 			// Load WP Smush.
-			require PHPUNIT_WP_ROCKET_ROOT_DIR . '/vendor/wpackagist-plugin/wp-smushit/wp-smush.php';
+			require WPMEDIA_PHPUNIT_ROOT_DIR . '/vendor/wpackagist-plugin/wp-smushit/wp-smush.php';
 		}
 
 		if ( BootstrapManager::isGroup( 'WithWoo' ) ) {
 			// Load WooCommerce.
 			define( 'WC_TAX_ROUNDING_MODE', 'auto' );
 			define( 'WC_USE_TRANSACTIONS', false );
-			require PHPUNIT_WP_ROCKET_ROOT_DIR . '/vendor/woocommerce/woocommerce/woocommerce.php';
+			require WPMEDIA_PHPUNIT_ROOT_DIR . '/vendor/woocommerce/woocommerce/woocommerce.php';
 		}
 
 		if ( BootstrapManager::isGroup( 'BeaverBuilder' ) ) {
@@ -77,7 +75,7 @@ tests_add_filter(
 
 		if ( BootstrapManager::isGroup( 'Hummingbird' ) ) {
 			define( 'WP_ADMIN', true );
-			require PHPUNIT_WP_ROCKET_ROOT_DIR . '/vendor/wpackagist-plugin/hummingbird-performance/wp-hummingbird.php';
+			require WPMEDIA_PHPUNIT_ROOT_DIR . '/vendor/wpackagist-plugin/hummingbird-performance/wp-hummingbird.php';
 		}
 
 		if ( BootstrapManager::isGroup( 'Cloudways' ) ) {

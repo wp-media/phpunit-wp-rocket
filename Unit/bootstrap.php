@@ -15,12 +15,13 @@ if ( ! defined( 'WP_ROCKET_IS_TESTING' ) ) {
 	define( 'WP_ROCKET_IS_TESTING', true );
 }
 
-define( 'PHPUNIT_WP_ROCKET_ROOT_DIR', dirname( dirname( dirname( __DIR__ ) ) ) );
-define( 'PHPUNIT_WP_ROCKET_TESTS_DIR', __DIR__ );
-
 // Set the path and URL to our virtual filesystem.
-define( 'WP_ROCKET_CACHE_ROOT_PATH', 'vfs://public/wp-content/cache/' );
-define( 'WP_ROCKET_CACHE_ROOT_URL', 'vfs://public/wp-content/cache/' );
+if ( ! defined( 'WP_ROCKET_CACHE_ROOT_PATH' ) ) {
+	define( 'WP_ROCKET_CACHE_ROOT_PATH', 'vfs://public/wp-content/cache/' );
+}
+if ( ! defined( 'WP_ROCKET_CACHE_ROOT_URL' ) ) {
+	define( 'WP_ROCKET_CACHE_ROOT_URL', 'http://example.org/wp-content/cache/' );
+}
 
 /**
  * The original fixture files need to loaded into memory before we mock them with Patchwork.

@@ -32,6 +32,7 @@ function load_original_fixtures_before_mocking() {
 		'/WP_Error.php',
 		'/WP_Theme.php',
 		'/WPDieException.php',
+		'/constants.php'
 	];
 	foreach ( $fixtures as $file ) {
 		require_once PHPUNIT_WP_ROCKET_FIXTURES_DIR . $file;

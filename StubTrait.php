@@ -16,6 +16,8 @@ trait StubTrait {
 	protected $wp_rocket_debug          = false;
 	protected $wp_rocket_advanced_cache = true;
 	protected $disable_wp_cron          = false;
+	protected $donotrocketoptimize      = null;
+	protected $donotasynccss            = null;
 	protected $white_label              = false;
 
 	protected function resetStubProperties() {
@@ -29,6 +31,8 @@ trait StubTrait {
 			'rocket_version'            => null,
 			'wp_rocket_debug'           => false,
 			'wp_rocket_advanced_cache'  => true,
+			'donotrocketoptimize'       => null,
+			'dontasynccss'              => null,
 			'white_label'               => false,
 		];
 
@@ -56,6 +60,12 @@ trait StubTrait {
 
 			case 'DISABLE_WP_CRON':
 				return $this->disable_wp_cron;
+
+			case 'DONOTASYNCCSS' :
+				return $this->donotasynccss;
+
+			case 'DONOTROCKETOPTIMIZE' :
+				return $this->donotrocketoptimize;
 
 			case 'FS_CHMOD_DIR':
 				return 0777;

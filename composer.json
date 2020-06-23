@@ -20,7 +20,7 @@
 		"brain/monkey": "^2.0",
 		"mikey179/vfsstream": "^1.6",
 		"phpunit/phpunit": "^5.7 || ^7",
-		"wp-media/phpunit": "dev-master"
+		"wp-media/phpunit": "^1.1.6"
 	},
 	"autoload": {
 		"psr-4": { "WP_Rocket\\Tests\\": "." }

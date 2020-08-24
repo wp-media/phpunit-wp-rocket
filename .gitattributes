@@ -5,5 +5,5 @@ vendor export-ignore
 .gitignore export-ignore
 
 composer.lock export-ignore
-LICENSE.md export-ignore
+LICENSE export-ignore
 README.md export-ignore

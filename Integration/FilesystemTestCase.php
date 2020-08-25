@@ -72,6 +72,8 @@ abstract class FilesystemTestCase extends VirtualFilesystemTestCase {
 		$this->resetStubProperties();
 
 		unset( $GLOBALS['debug_fs'] );
+		// Reset the cached state.
+		_rocket_get_cache_dirs( '', '', true );
 
 		parent::tearDown();
 	}

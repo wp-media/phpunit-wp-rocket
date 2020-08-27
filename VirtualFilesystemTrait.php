@@ -100,11 +100,14 @@ trait VirtualFilesystemTrait {
 	}
 
 	protected function checkShouldNotDeleteEntries( $dir = '' ) {
-		$entriesAfterCleaning = $this->filesystem->getListing( $this->getDirUrl( $dir ) );
-		$actual               = array_diff( $entriesAfterCleaning, $this->shouldNotClean );
+		$actualEntriesAfterCleaning = $this->filesystem->getListing( $this->getDirUrl( $dir ) );
+
+		$actual = array_diff( $this->shouldNotClean, $actualEntriesAfterCleaning );
+
 		if ( $this->dumpResults ) {
 			var_dump( $actual );
 		}
+
 		$this->assertEmpty( $actual );
 	}
 
